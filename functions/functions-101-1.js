@@ -1,4 +1,4 @@
-Function - input(argument), code, output(return value)
+//Function - input(argument), code, output(return, value)
 
 let greetUser = function () {
     console.log('welcome user!')

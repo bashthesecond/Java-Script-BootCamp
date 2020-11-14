@@ -10,15 +10,22 @@ console.log(result)
 
 //Default arguments
 let getScoreText = function(name = 'Anonymous', score = 0) {
-    return 'Name: ' + name + ' - Score: ' + score
+    return `Name: ${name} - Score: ${score}`
 }
 
 let scoreText = getScoreText(undefined, 99)
 console.log(scoreText)
 
 let getTip = function (bill, tipPercent = 0.2)  {
-    return tipPercent * bill
+    let tipPercentile = tipPercent * 100
+    let tip = tipPercent * bill
+    return `A ${tipPercentile}% tip on $${bill} would be $${tip}.`
 }
 
-let tip = getTip(100)
+let tip = getTip(100, 0.3)
 console.log(tip)
+
+let name = 'Jen'
+let age = 26
+
+console.log(`Hey, my name is ${name}! I am ${age} years old.`)
