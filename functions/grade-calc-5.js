@@ -1,6 +1,6 @@
 
-let gradeCalc = function (achievedScore, overallScore) {
-    let result = achievedScore * 100 / overallScore
+const gradeCalc = function (achievedScore, overallScore) {
+    const result = achievedScore * 100 / overallScore
     let grade = ""
     if (result >= 90 ){
         grade = 'A'
@@ -16,5 +16,5 @@ let gradeCalc = function (achievedScore, overallScore) {
     return `You got a ${grade} (${result}%)!`
 }
 
-let grade = gradeCalc(50, 100)
+const grade = gradeCalc(50, 100)
 console.log(grade)
