@@ -1,9 +1,52 @@
-//creat a T0-do with 5 items
-//print a message indicating how many items items todo
-//print 1st and 2nd to last items
+const toDos = [{
+    text: 'Study',
+    complete: true
+}, {
+    text: 'Siesta',
+    complete: false
+}, {
+    text: 'Wash Dishes',
+    complete: true
+}, {
+    text: 'Pump water',
+    complete: false
+}, {
+    text: 'Laundry',
+    complete: false
+}]
 
-const toDo = ['Study', 'Siesta', 'Wash Dishes', 'Pump water', 'Laundry']
+const deleteTodo = function (toDos, toDoText) {
+    const index = toDos.findIndex(function (toDo, index) {
+        return toDo.text.toLowerCase() === toDoText.toLowerCase() 
+    })
 
-console.log(`You have ${toDo.length} to-do(s)`)
-console.log(`Todo: ${toDo[0]}`)
-console.log(`Todo: ${toDo[toDo.length - 2]}`)
+    if (index >= 0) {
+        toDos.splice(index, 1)
+    } 
+}
+
+const getThingsToDo = function (toDos) {
+     return toDos.filter (function (toDo) {
+        return !toDo.complete
+     })
+}
+
+const sortTodo = function(toDos) {
+    toDos.sort(function (a, b) {
+        if (!a.complete && b.complete) {
+            return -1
+        } else if (a.complete && !b.complete) {
+            return 1
+        } else {
+            return 0
+        }                    
+    })
+}
+
+sortTodo(toDos)
+console.log(toDos)
+
+// console.log(getThingsToDo(toDos))
+
+// deleteTodo(toDos, 'study')
+// console.log(toDos)
