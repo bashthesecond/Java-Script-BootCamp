@@ -7,8 +7,17 @@
     <title>To-Do App</title>
 </head>
 <body>
-    <h1>To-Do App</h1>    
-    <button id="create-task">Create Task</button>
+    <h1>To-Do App</h1>
+    <input type="text" id="search-to-do" placeholder="Type task">   
+    <label for="hide-completed">
+        <input type="checkbox" id="hide-completed" name="hideCompleted"> Hide Completed
+    </label>  
+    <div id="to-do-container"></div>
+    <form id="create-todo">
+        <input type="text" name="newTodo" id="new-todo" placeholder="Input To-Do">
+        <button>Add To-Do</button>
+    </form>
+    <script src="todo-functions.js"></script>
     <script src="todo-app.js"></script>
 </body>
 </html>

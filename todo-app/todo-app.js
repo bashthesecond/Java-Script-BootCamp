@@ -1,35 +1,29 @@
-const toDos = [{
-    text: 'Study',
-    complete: true
-}, {
-    text: 'Siesta',
-    complete: false
-}, {
-    text: 'Wash Dishes',
-    complete: true
-}, {
-    text: 'Pump water',
-    complete: false
-}, {
-    text: 'Laundry',
-    complete: false
-}]
+let todos = getSavedTodos()
 
+const filters = {
+    searchText: '',
+    hideCompleted: false
+}
 
-const listUncompletedTask = toDos.filter(function (toDo) {
-        return !toDo.complete
-    })
+renderTodo(todos, filters)
 
-const toDosStatus = document.createElement('h3')
-toDosStatus.textContent = `You have ${listUncompletedTask.length} todo(s) left`
-document.querySelector('body').appendChild(toDosStatus)
-
-toDos.forEach(function (toDo) {
-    const newParagraph = document.createElement('p')
-    newParagraph.textContent = toDo.text
-    document.querySelector('body').appendChild(newParagraph) 
+document.querySelector('#search-to-do').addEventListener('input', function(e) {
+    filters.searchText = e.target.value
+    renderTodo(todos, filters)
 })
 
-document.querySelector('#create-task').addEventListener('click', function () {
-    console.log('Task Added')
+document.querySelector('#create-todo').addEventListener('submit', function(e) {
+    e.preventDefault()
+    todos.unshift({
+        text: e.target.elements.newTodo.value, 
+        completed: false
+    })
+    saveTodos(todos)
+    renderTodo(todos, filters)
+    e.target.elements.newTodo.value= ''
+})
+
+document.querySelector('#hide-completed').addEventListener('change', function(e) {
+    filters.hideCompleted = e.target.checked
+    renderTodo(todos, filters)
 })
