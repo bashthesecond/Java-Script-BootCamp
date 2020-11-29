@@ -15,6 +15,7 @@ document.querySelector('#search-to-do').addEventListener('input', function(e) {
 document.querySelector('#create-todo').addEventListener('submit', function(e) {
     e.preventDefault()
     todos.unshift({
+        id: uuidv4(),
         text: e.target.elements.newTodo.value, 
         completed: false
     })
