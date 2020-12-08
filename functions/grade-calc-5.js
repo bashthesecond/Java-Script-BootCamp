@@ -1,5 +1,8 @@
 
-const gradeCalc = function (achievedScore, overallScore) {
+const gradeCalc = (achievedScore, overallScore) => {
+    if (typeof achievedScore !== 'number' || typeof overallScore !== 'number') {
+        throw Error('Arguments must be numbers')
+    }
     const result = achievedScore * 100 / overallScore
     let grade = ""
     if (result >= 90 ){
@@ -16,5 +19,10 @@ const gradeCalc = function (achievedScore, overallScore) {
     return `You got a ${grade} (${result}%)!`
 }
 
-const grade = gradeCalc(50, 100)
-console.log(grade)
+try {
+    const grade = gradeCalc('5fff', 100)
+    console.log(grade)
+} catch (e) {
+    console.log(e.message)
+}
+
