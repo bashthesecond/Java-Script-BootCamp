@@ -1,32 +1,55 @@
-const calcAge = function () {
-    console.log(this)
-    
+class Person {
+    constructor (firstName, lastName, age, likes = []) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.age = age
+        this.likes = likes
+    }
+    getBio () {
+        let bio = `${this.firstName} is ${this.age}.`
+        
+        this.likes.forEach(like => {
+            bio += ` ${this.firstName} likes ${like}.`
+        })
+
+        return bio
+    }
+    setName (fullName) {
+        const name = fullName.split(' ')
+        this.firstName = name[0]
+        this.lastName = name[1]
+    }
+
 }
 
-const age = new calcAge()
-console.log(age) 
-
-
-const Person = function (firstName, lastName, age) {
-    this.firstName = firstName
-    this.lastName = lastName
-    this.age = age 
+class Employee extends Person {
+    constructor (firstName, LastName, age, position, likes) {
+        super (firstName, LastName, age, likes)
+        this.position = position
+    }
+    getBio () {
+        return `${this.firstName} ${this.lastName} is a ${this.position}`
+    }
+    getYearsLeft () {
+        return 65 - this.age 
+    }
 }
 
-Person.prototype.getBio = function () {
-    return `${this.firstName} is ${this.age}.`  
-} 
+class Student extends Person {
+    constructor (firstName, lastName, age, grade, likes) {
+        super(firstName, lastName, age, likes)
+        this.grade = grade
+    }
+    getBio () {
+        return this.grade >= 70 ? `${this.firstName} is passing the class.` : `${this.firstName} is failing the class.`
+    }
+    updateGrade (score) {
+        this.grade +=  score
+    } 
+}
 
-Person.prototype.setName = function (fullname) {
-    const name = fullname.split(' ')
-    this.firstName = name[0]
-    this.lastName = name[1]
-} 
-
-const me = new Person('Olawale', 'Bashiru', 26)
-me.setName('Tosin Bashiru')
-console.log(me.getBio())
-
-const person2 = new Person('Qudus', 'Bashiru', 19)
-console.log(person2.getBio())
+const newStudent = new Student('Ola', 'Bash', 24, 70)
+console.log(newStudent.getBio())
+newStudent.updateGrade(-10)
+console.log(newStudent.getBio())
 
