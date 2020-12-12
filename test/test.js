@@ -33,7 +33,35 @@ const test = [2, 3, 6]
 
 // console.log(addNumber(5, 6, 8, 10))
 
-let grade = 80
 
-console.log(grade >= 70 ? `Ola is passing the class.` : `Ola is failing the class.`)
+// this.grade >= 70 ? `${this.firstName} is passing the class.` : `${this.firstName} is failing the class.`
 
+
+// let grade = 80
+
+// console.log(grade >= 70 ? `Ola is passing the class.` : `Ola is failing the class.`)
+
+
+
+//An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case. isIsogram("Dermatoglyphics") == true - isIsogram("aba") == false - isIsogram("moOse") == false // -- ignore letter case
+
+function isIsogram(str){
+    if (str.length === 0) {
+          return true
+      } else {
+          const strArray = str.toLowerCase().split('')
+          let newStr = ''
+          let status = true
+          strArray.forEach(function(letter) {
+              if (!newStr.includes(letter)) {
+                  newStr +=letter
+              } else {
+                  status = false
+              }
+          })
+          return status 
+        }
+          
+}
+
+console.log(isIsogram('moOse'))
