@@ -45,23 +45,51 @@ const test = [2, 3, 6]
 
 //An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case. isIsogram("Dermatoglyphics") == true - isIsogram("aba") == false - isIsogram("moOse") == false // -- ignore letter case
 
-function isIsogram(str){
-    if (str.length === 0) {
-          return true
-      } else {
-          const strArray = str.toLowerCase().split('')
-          let newStr = ''
-          let status = true
-          strArray.forEach(function(letter) {
-              if (!newStr.includes(letter)) {
-                  newStr +=letter
-              } else {
-                  status = false
-              }
-          })
-          return status 
-        }
+// function isIsogram(str){
+//     if (str.length === 0) {
+//           return true
+//       } else {
+//           const strArray = str.toLowerCase().split('')
+//           let newStr = ''
+//           let status = true
+//           strArray.forEach(function(letter) {
+//               if (!newStr.includes(letter)) {
+//                   newStr +=letter
+//               } else {
+//                   status = false
+//               }
+//           })
+//           return status 
+//         }
           
+// }
+
+// console.log(isIsogram('moOse'))
+
+
+class IsConst {
+    constructor (name, street, state, zip, country) {
+        this.name = name
+        this.street = street
+        this.state = state 
+        this.zip = zip
+        this.country = country    
+    }
+    set address (str) {
+        const add = str.split(' ')
+        this.street = add[0]
+        this.state = add[1]
+        this.zip = add[2]
+        this.country = add[3]
+    }
+    get address () {
+        return `${this.street}, ${this.state}, ${this.country}.`
+    }
+    getSummary() {
+        return `${this.name} lives at ${this.address}`
+    }
 }
 
-console.log(isIsogram('moOse'))
+const id = new IsConst('iwajoo', 'fawole street', 'ogun', '23401', 'nigeria')
+id.address = 'yankaba kano 72001 nigeria'
+console.log(id.getSummary())

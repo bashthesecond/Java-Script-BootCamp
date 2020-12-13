@@ -16,10 +16,6 @@ const toWeirdCase = function (string) {
 newWord = toWeirdCase('umbrella')
 console.log(newWord)
 
-
-
-
-
 //build the function to find n sequence in this pattern -> A = [1,2,5,11,21,36,57,85,...]
 
 const findTheNth = function (n) {
