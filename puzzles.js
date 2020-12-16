@@ -74,4 +74,45 @@ function alphabetPosition(text) {
     return newString
   }
 
+//Return the number (count) of vowels in the given string.
+//We will consider a, e, i, o, u as vowels for this Kata (but not y).
+//The input string will only consist of lower case letters and/or spaces.
+function getCount(str) {
+    let vowelsCount = 0;
+    const vowelArray = ['a', 'e', 'i', 'o', 'u']
+    const strArray = str.split()
+    strArray.forEach((el) => {
+        if (vowelArray.includes(el)) {
+        vowelsCount = vowelsCount + 1
+      }
+    })
+    return vowelsCount;
+}
 
+//Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters,
+//each taken only once - coming from s1 or s2.
+//Examples:
+//a = "xyaabbbccccdefww"
+//b = "xxxxyyyyabklmopq"
+//longest(a, b) -> "abcdefklmopqwxy"
+//a = "abcdefghijklmnopqrstuvwxyz"
+//longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+function longest(s1, s2) {
+    const arr = (s1 + s2).split('')
+    let newStr = []
+    arr.forEach((el) => {
+        if (!newStr.includes(el)) {
+        newStr.push(el)
+        }
+    })
+    const result = newStr.sort((a, b) => {
+        if (a < b) {
+            return -1
+        } else if (a > b) {
+            return 1
+        } else{
+            return 0
+        }
+    })
+    return result.join('')
+}
