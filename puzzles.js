@@ -17,7 +17,6 @@ newWord = toWeirdCase('umbrella')
 console.log(newWord)
 
 //build the function to find n sequence in this pattern -> A = [1,2,5,11,21,36,57,85,...]
-
 const findTheNth = function (n) {
     const a = []
     const b = []
@@ -50,3 +49,29 @@ function squareDigits(num){
     })
     return parseInt(nSquareStr)
   }
+
+//Welcome, In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+//If anything in the text isn't a letter, ignore it and don't return it. E.G "a" = 1, "b" = 2, etc.
+//Example
+//alphabetPosition("The sunset sets at twelve o' clock.")
+//Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" (as a string)
+function alphabetPosition(text) {
+    const textA = text.toLowerCase().split('')
+    const letterArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    const transformLetter = (letter, letterArray) => {
+        const index = letterArray.findIndex((item) => item === letter)
+        return index + 1
+    }
+    let newString = ''
+    textA.forEach((el) => {
+        let numberE = transformLetter(el, letterArray)
+        if (numberE > 0) {
+            numberE = numberE.toString()
+            newString += numberE + ' '  
+        }
+    })
+    newString = newString.trim() 
+    return newString
+  }
+
+
