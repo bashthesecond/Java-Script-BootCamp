@@ -25,14 +25,11 @@ getCountry('MX').then((country) => {
     console.log(`Error: ${err}}`)
 })
 
-// fetch('http://puzzle.mead.io/puzzle', {}).then((data) => {
-//     if (data.status === 200) {
-//         return data.json()
-//     } else {
-//         throw new Error('Unable to fetch puzzle')
-//     }
-// }).then((data) => {
-//     console.log(data.puzzle)
-// }).catch((error) => {
-//     console.log(error)
-// })
+
+getLocation().then((location) => {
+    return getCountry(location.country)
+}).then((country) => {
+    console.log(country.name)
+}).catch((err) => {
+    console.log(`Error: ${err}`)
+})
