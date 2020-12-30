@@ -36,7 +36,7 @@ bodyElement.addEventListener('input', (e) => {
 })
 
 //setup remove button
-noteIndex = notes.findIndex((note) => note.id === noteID)
+const noteIndex = notes.findIndex((note) => note.id === noteID)
 document.querySelector('#remove-note').addEventListener('click', (e) => {
     removeNote(noteID)
     saveNotes(notes)
