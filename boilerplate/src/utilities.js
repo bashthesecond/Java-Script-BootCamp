@@ -1,3 +1,7 @@
-console.log('utilities.js')
+const name = 'olawale'
 
-export const add = (a, b) => a + b
+const add = (a, b) => a + b
+
+const square = (x) => x * x
+
+export { name, add, square as default }
