@@ -1,4 +1,4 @@
-const name = 'olawale'
+const name = 'bash'
 
 const add = (a, b) => a + b
 

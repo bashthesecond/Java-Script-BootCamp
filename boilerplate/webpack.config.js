@@ -13,9 +13,13 @@ module.exports = {
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: 'env'
+                    presets: ['env']
                 }
             }
         }]
-    }
+    },
+    devServer: {
+        contentBase: path.resolve(__dirname, 'public'),
+        publicPath: '/scripts/' 
+    }  
 }
