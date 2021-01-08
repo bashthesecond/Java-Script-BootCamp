@@ -1,1 +1,3 @@
-console.log('utilities.js')
+import './utilities'
+console.log('index.js')
+// console.log(add(5, 5))
