@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-server": "webpack serve --mode development --env development",
+    "dev-server": "webpack serve --mode development",
     "build": "webpack --mode production"
   },
   "author": "",
@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "live-server": "^1.2.1",
     "webpack": "^5.11.1",
