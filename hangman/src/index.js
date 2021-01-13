@@ -1,8 +1,5 @@
 import Hangman from './hangman'
 import getPuzzle from './requests'
-// import validator from 'validator'
-
-// console.log(validator.isEmail('a'))
 
 const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses') 
