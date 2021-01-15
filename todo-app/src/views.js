@@ -1,4 +1,4 @@
-import { getTodos, removeTodo, saveTodos, toggleTodo } from './todos'
+import { getTodos, removeTodo, toggleTodo } from './todos'
 import { getFilters } from './filters'
 
 // renderTodos
@@ -53,7 +53,6 @@ const generateTodoDOM = (todo) => {
     containerEl.appendChild(checkbox)
     checkbox.addEventListener('change', (e) => {
         toggleTodo(todo.id)
-        saveTodos()
         renderTodos()
         
     })    
@@ -68,7 +67,6 @@ const generateTodoDOM = (todo) => {
     todoEl.appendChild(removeButton)
     removeButton.addEventListener('click', () => {
         removeTodo(todo.id)
-        saveTodos()
         renderTodos()
     })
 

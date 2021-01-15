@@ -1,6 +1,6 @@
 // Add necessary imports
 import { setFilters } from './filters'
-import { createTodo } from './todos'
+import { createTodo, loadTodos } from './todos'
 import { renderTodos } from './views'
 
 // Render initial todos
@@ -27,9 +27,10 @@ document.querySelector('#create-todo').addEventListener('submit', (e) => {
     e.preventDefault()
     
     const text = e.target.elements.newTodo.value.trim()
-    
-    createTodo(text)
-    renderTodos()
+    if (text.length) {
+        createTodo(text)    
+        renderTodos()
+    }
     e.target.elements.newTodo.value= ''
     
 })
@@ -37,6 +38,7 @@ document.querySelector('#create-todo').addEventListener('submit', (e) => {
 // Bonus: Add a watcher for local storage
 window.addEventListener('storage', (e) => {
     if (e.key === 'todos') {
+        loadTodos()
         renderTodos()
     }
 })
