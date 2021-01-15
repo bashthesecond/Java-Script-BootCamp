@@ -1,7 +1,7 @@
-import {v4 as uuidv4} from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 
 // Setup the empty todos array
-const todos = []
+let todos = []
 
 // loadTodos
 // Arguments: none
@@ -31,7 +31,7 @@ const getTodos = () => todos
 // Arguments: todo text
 // Return value: none
 const createTodo = (text) => {
-    if (update.length) {
+    if (text.length) {
         todos.unshift({
             id: uuidv4(),
             text,
