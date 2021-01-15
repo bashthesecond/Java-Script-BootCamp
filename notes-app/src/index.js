@@ -1,21 +1,37 @@
-import { getNotes, createNote, removeNote, updateNote } from './notes'
-import { getFilters, setFilters } from './filters'
+import { createNote } from './notes'
+import { setFilters } from './filters'
+import { renderNotes } from './views'
 
-// console.log(getNotes())
-// createNote()
-// removeNote()
 
-// updateNote('8e2bf9f6-077c-4303-9510-dd2e1d0d3e48', {
-//     title: 'My note title',
-//     body: 'My note body'
-// })
-// console.log(getNotes())
 
-console.log(getFilters())
+//Render notes to user
+renderNotes()
 
-setFilters({
-    searchText: 'office',
-    sortBy: 'byCreated'
+//Setup new note 
+document.querySelector('#create-note').addEventListener('click', (e) => {
+    const id = createNote()
+    location.assign(`/edit.html#${noteID}`)
 })
 
-console.log(getFilters())
+//Setup search bar
+document.querySelector('#search-text').addEventListener('input', (e) => {
+    setFilters({
+        searchText: e.target.value
+    })
+    renderNotes()
+})
+
+//Setup notes arrangement options
+document.querySelector('#filter-by').addEventListener('change', (e) => {
+    setFilters({
+        sortBy: e.target.value
+    })
+    renderNotes()
+})
+
+//Setup universal update from different tabs
+window.addEventListener('storage', (e) => {
+    if (e.key === 'notes')
+    renderNotes()
+})
+

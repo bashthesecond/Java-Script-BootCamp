@@ -32,7 +32,9 @@ const createNote = () => {
         createdAt: timestamp,
         updatedAt: timestamp
     })
-    saveNotes(  )
+    saveNotes()
+
+    return id
 }
 
 //Remove a note from the list 
@@ -100,6 +102,7 @@ const updateNote = (id, updates) => {
     }
 
     saveNotes()
+    return note
 }
 
 notes = loadNotes()
