@@ -1,4 +1,7 @@
-// import 
-import add from './utilities'
-console.log('index.js')
-console.log(add(20, 10))
+const printTeam = (teamName, coach, ...players) => {
+    console.log(`Team: ${teamName}`)
+    console.log(`Coach: ${coach}`)
+    console.log(`Players: ${players}`)
+}
+
+printTeam('Liberty', 'Casey Penn', 'Marge', 'Aiden', 'Herbert', 'Sherry')
