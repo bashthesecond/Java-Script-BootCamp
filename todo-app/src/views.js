@@ -5,13 +5,13 @@ import { getFilters } from './filters'
 // Arguments: none
 // Return value: none
 const renderTodos = () => {
-    const filters = getFilters()
+    const {searchText, hideCompleted} = getFilters()
     const todos = getTodos()
     const todoEl = document.querySelector('#to-do-container')
 
-    const filteredTodos = todos.filter((todo) => {
-        const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
-        const hideCompletedMatch = !filters.hideCompleted || !todo.completed
+    const filteredTodos = todos.filter(({text, completed}) => {
+        const searchTextMatch = text.toLowerCase().includes(searchText.toLowerCase())
+        const hideCompletedMatch = !hideCompleted || !completed
         return searchTextMatch && hideCompletedMatch 
     })
 
