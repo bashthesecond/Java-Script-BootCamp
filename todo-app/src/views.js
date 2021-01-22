@@ -1,5 +1,6 @@
-import { getTodos, removeTodo, toggleTodo } from './todos'
+import { getTodos, removeTodo, toggleTodo, editTodo } from './todos'
 import { getFilters } from './filters'
+import { renderNotes } from '../../notes-app/src/views'
 
 // renderTodos
 // Arguments: none
@@ -21,7 +22,15 @@ const renderTodos = () => {
     todoEl.appendChild(generateSummaryDOM(incompleteTodos))
 
     if (filteredTodos.length > 0) {
-        filteredTodos.forEach((todo) => {
+        filteredTodos.sort((a, b) => {
+            if (parseInt(a.priority) > parseInt(b.priority)) {
+                return -1
+            } if (parseInt(b.priority) > parseInt(a.priority)) {
+                return 1
+            } else {
+                return 0
+            }
+        }).forEach((todo) => {
             todoEl.appendChild(generateTodoDOM(todo))
         })
     } else {
@@ -39,8 +48,12 @@ const generateTodoDOM = (todo) => {
     const todoEl = document.createElement('label')
     const containerEl = document.createElement('div')
     const checkbox = document.createElement('input')
-    const todoText = document.createElement('span')
+    const todoText = document.createElement('input')
     const removeButton = document.createElement('button')
+    const priorityList = document.createElement('select')
+    const highOption = document.createElement('option')
+    const mediumOption = document.createElement('option')
+    const lowOption = document.createElement('option')
     
      //Setup container
      todoEl.classList.add('list-item')
@@ -58,9 +71,37 @@ const generateTodoDOM = (todo) => {
     })    
     
     //Setup todo text
-    todoText.textContent = todo.text
+    todoText.value = todo.text
     containerEl.appendChild(todoText)
+    todoText.addEventListener('input', e => {
+        if (e.target.value.length > 0) {
+            editTodo(todo.id, {
+                text: e.target.value.trim()
+            })
+        }
+        todoText.value = todo.text
+    })
     
+    //Setup priority dropdown
+    priorityList.setAttribute('name', 'priorityListValue')
+    highOption.textContent = 'high'
+    highOption.value = '3'
+    mediumOption.textContent = 'medium'
+    mediumOption.value = '2'
+    lowOption.textContent = 'low'
+    lowOption.value = '1'
+    priorityList.appendChild(highOption)
+    priorityList.appendChild(mediumOption)
+    priorityList.appendChild(lowOption)
+    todoEl.appendChild(priorityList)
+    priorityList.value = todo.priority
+    priorityList.addEventListener('change', e => {
+        editTodo(todo.id, {
+            priority: e.target.value
+        })
+        renderTodos()
+    })
+
     //setup remove button
     removeButton.textContent = 'remove'
     removeButton.classList.add('button', 'button--text')

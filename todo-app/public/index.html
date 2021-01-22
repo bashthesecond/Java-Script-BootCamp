@@ -21,13 +21,22 @@
             <label class="checkbox" for="hide-completed">
                 <input type="checkbox" id="hide-completed" name="hideCompleted"> Hide Completed
             </label>
+            <button class = "button" id = "remove-completed-todos">Remove Completed</button>
         </div>
     </div>
 
     <div class="container">
         <div id="to-do-container"></div>
-        <form id="create-todo">
-            <input class="input" type="text" name="newTodo" id="new-todo" placeholder="Input To-Do">
+        <form id="create-todo" class="create-todo">
+            <input class="input" type="text" name="newTodo" id="new-todo" placeholder="Input Task">
+            <span>
+                <select name = "priorityList" class = "input" id = "priority-list">
+                    <option value="3">high</option>
+                    <option value="2" selected>medium</option>
+                    <option value="1">low</option>
+                </select>
+            </span>
+            
             <button class="button">Add To-Do</button>
         </form>
     </div>

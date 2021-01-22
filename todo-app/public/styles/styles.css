@@ -28,13 +28,13 @@ html {
 
 body {
     background: #2B292E;
-  color: #fafafa;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
+    color: #fafafa;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 a {
@@ -44,34 +44,34 @@ a {
 /* Container */
 
 .container {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 0 1.6rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
 }
 
 /* Header */
 
 .header {
-  background: #6F439C;
-  color:white;
-  padding: 1.6rem 0;
+    background: #6F439C;
+    color:white;
+    padding: 1.6rem 0;
 }
 
 .header__title {
-  font-size: 3.2rem;
-  margin-bottom: .4rem;
+    font-size: 3.2rem;
+    margin-bottom: .4rem;
 }
 
 .header__subtitle {
-  /* color: #777; */
-  font-size: 1.6rem;
-  font-weight: 300;
+    /* color: #777; */
+    font-size: 1.6rem;
+    font-weight: 300;
 }
 
 /* Actions Bar */
 
 .actions {
-    background-color: #353239;
+     background-color: #353239;
     /* border-bottom: 1px solid #dedfe0; */
     /* color: #333333; */
     padding: 1rem
@@ -220,4 +220,9 @@ a {
 
 .empty-message {
     margin: 3.2rem 0;
+}
+.create-todo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

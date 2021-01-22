@@ -30,11 +30,12 @@ const getTodos = () => todos
 // createTodo
 // Arguments: todo text
 // Return value: none
-const createTodo = (text) => {
+const createTodo = (text, priority) => {
     todos.unshift({
         id: uuidv4(),
         text,
-        completed: false
+        completed: false,
+        priority
     })
     saveTodos(todos)
 }
@@ -62,8 +63,31 @@ const toggleTodo = (id) => {
     })
 }
 
+//Remove completed todos
+const removeCompletedTodos = () => {
+    todos = todos.filter((todo) => !todo.completed)
+    saveTodos()
+}
+
+//Edit todo
+const editTodo = (id, {text, priority}) => {
+    const todo = todos.find((todo) => todo.id === id)
+    if (!todo) {
+        return
+    }
+    if (typeof text === 'string') {
+        todo.text = text
+        saveTodos()
+    }
+    if (typeof priority === 'string') {
+        todo.priority = priority
+        saveTodos()
+    }
+        
+}
+
 // Make sure to call loadTodos and setup the exports
 loadTodos()
 
 
-export { saveTodos, getTodos, createTodo, removeTodo, toggleTodo, loadTodos }
+export { saveTodos, getTodos, createTodo, removeTodo, toggleTodo, loadTodos, removeCompletedTodos, editTodo }

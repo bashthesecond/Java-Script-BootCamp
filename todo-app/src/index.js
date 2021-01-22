@@ -1,6 +1,6 @@
 // Add necessary imports
 import { setFilters } from './filters'
-import { createTodo, loadTodos } from './todos'
+import { createTodo, loadTodos, removeCompletedTodos} from './todos'
 import { renderTodos } from './views'
 
 // Render initial todos
@@ -27,11 +27,13 @@ document.querySelector('#create-todo').addEventListener('submit', (e) => {
     e.preventDefault()
     
     const text = e.target.elements.newTodo.value.trim()
+    const priority = e.target.elements.priorityList.value
     if (text.length) {
-        createTodo(text)    
+        createTodo(text, priority)    
         renderTodos()
     }
     e.target.elements.newTodo.value= ''
+    e.target.elements.priorityList.value= 2
     
 })
 
@@ -42,6 +44,14 @@ window.addEventListener('storage', (e) => {
         renderTodos()
     }
 })
+
+document.querySelector('#remove-completed-todos').addEventListener('click', e => {
+    removeCompletedTodos()
+    renderTodos()
+})
+
+// console.log(removeCompletedTodos())
+// console.log(getTodos())
 
 
 
