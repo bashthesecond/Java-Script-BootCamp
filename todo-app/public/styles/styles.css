@@ -80,6 +80,7 @@ a {
 .actions__container {
     align-items: center;
     display: flex;
+    justify-content: space-between;
     max-width: 60rem;
     margin: 0 auto;
     min-height: 3rem;
@@ -225,4 +226,8 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.hide-completed{
+    padding: 0 10px;
 }
