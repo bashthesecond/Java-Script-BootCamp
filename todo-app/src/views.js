@@ -1,11 +1,12 @@
 import { getTodos, removeTodo, toggleTodo, editTodo } from './todos'
 import { getFilters } from './filters'
-import { renderNotes } from '../../notes-app/src/views'
+import SVGList from './index'
+
 
 // renderTodos
 // Arguments: none
 // Return value: none
-const renderTodos = () => {
+const renderTodos = (SVGList) => {
     const {searchText, hideCompleted} = getFilters()
     const todos = getTodos()
     const todoEl = document.querySelector('#to-do-container')
@@ -31,7 +32,7 @@ const renderTodos = () => {
                 return 0
             }
         }).forEach((todo) => {
-            todoEl.appendChild(generateTodoDOM(todo))
+            todoEl.appendChild(generateTodoDOM(todo, SVGList))
         })
     } else {
         const emptyMessage = document.createElement('p')
@@ -44,12 +45,13 @@ const renderTodos = () => {
 // generateTodoDOM
 // Arguments: todo
 // Return value: the todo element
-const generateTodoDOM = (todo) => {
+const generateTodoDOM = (todo, SVGList) => {
     const todoEl = document.createElement('label')
     const containerEl = document.createElement('div')
     const checkbox = document.createElement('input')
     const todoText = document.createElement('input')
     const removeButton = document.createElement('button')
+    const priorityContainer = document.createElement('div') 
     const priorityList = document.createElement('select')
     const highOption = document.createElement('option')
     const mediumOption = document.createElement('option')
@@ -66,14 +68,15 @@ const generateTodoDOM = (todo) => {
     containerEl.appendChild(checkbox)
     checkbox.addEventListener('change', (e) => {
         toggleTodo(todo.id)
-        renderTodos()
+        renderTodos(SVGList)
         
     })    
     
     //Setup todo text
+    todoText.classList.add('edit-todo')
     todoText.value = todo.text
     containerEl.appendChild(todoText)
-    todoText.addEventListener('input', e => {
+    todoText.addEventListener('change', e => {
         if (e.target.value.length > 0) {
             editTodo(todo.id, {
                 text: e.target.value.trim()
@@ -83,6 +86,10 @@ const generateTodoDOM = (todo) => {
     })
     
     //Setup priority dropdown
+    priorityContainer.classList.add('priority-container')
+    const newPrioritySVG = SVGList.prioritySVG.cloneNode(true)
+    newPrioritySVG.classList.add('priority-SVG2')
+    priorityContainer.appendChild(newPrioritySVG)
     priorityList.setAttribute('name', 'priorityListValue')
     highOption.textContent = 'high'
     highOption.value = '3'
@@ -93,22 +100,25 @@ const generateTodoDOM = (todo) => {
     priorityList.appendChild(highOption)
     priorityList.appendChild(mediumOption)
     priorityList.appendChild(lowOption)
-    todoEl.appendChild(priorityList)
+    priorityContainer.appendChild(priorityList)
+    todoEl.appendChild(priorityContainer)
     priorityList.value = todo.priority
     priorityList.addEventListener('change', e => {
         editTodo(todo.id, {
             priority: e.target.value
         })
-        renderTodos()
+        renderTodos(SVGList)
     })
 
     //setup remove button
-    removeButton.textContent = 'remove'
+    const newRemoveSVG = SVGList.removeSVG.cloneNode(true)
+    newRemoveSVG.classList.add('remove-SVG')
+    removeButton.appendChild(newRemoveSVG)
     removeButton.classList.add('button', 'button--text')
     todoEl.appendChild(removeButton)
     removeButton.addEventListener('click', () => {
         removeTodo(todo.id)
-        renderTodos()
+        renderTodos(SVGList)
     })
 
     return todoEl
@@ -122,7 +132,7 @@ const generateSummaryDOM = (incompleteTodos) => {
     const summary = document.createElement('h3')
     summary.classList.add('list-title')
     const plural = (incompleteTodos.length === 1)? '' : 's'
-    summary.textContent = `You have ${incompleteTodos.length} todo${plural} left`
+    summary.textContent = `You have ${incompleteTodos.length} task${plural} left`
     return summary
 }
 

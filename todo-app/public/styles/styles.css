@@ -58,38 +58,40 @@ a {
 }
 
 .header__title {
-    font-size: 3.2rem;
-    margin-bottom: .4rem;
+    font-size: 3rem;
+    margin-bottom: .6rem;
+    display: inline-flex;
+    align-items: center;
 }
 
 .header__subtitle {
     /* color: #777; */
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 300;
 }
 
 /* Actions Bar */
-
 .actions {
      background-color: #353239;
-    /* border-bottom: 1px solid #dedfe0; */
+    border-bottom: .2px solid #dedfe0;
     /* color: #333333; */
-    padding: 1rem
+    padding: 1rem;
 }
 
 .actions__container {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 60rem;
     margin: 0 auto;
     min-height: 3rem;
     padding: 0 1.6rem;
 }
 
-.actions__container--spaced {
+/* .actions__container--spaced {
     justify-content: space-between
-}
+} */
 
 /* Form Inputs */
 
@@ -99,7 +101,7 @@ a {
     font-weight: 300;
     height: 3rem;
     margin-right: 1.6rem;
-    padding: .4rem .8rem;
+    padding: .4rem .8rem; 
 }
 
 .checkbox {
@@ -107,8 +109,19 @@ a {
     align-items: baseline;
 }
 
+.hide-completed-container{
+    display: inline-flex;
+    align-items: center;
+}
+
+.hide-completed{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .checkbox > input {
-    margin-right: .4rem;
+    /* margin-right: .4rem; */
 }
 
 .button {
@@ -120,6 +133,8 @@ a {
     font-weight: 300;
     padding: .8rem;
     transition: background .3s ease, color .3s ease;
+    display: inline-flex;
+    align-items: center;
 }
 
 .button:hover {
@@ -192,7 +207,14 @@ a {
     display: flex;
     font-size: 1.8rem;
     font-weight: 300;
-    align-items: baseline;
+    align-items: center;
+}
+
+.edit-todo{
+    border: none;
+    background-color: #353239;
+    color: #fafafa;
+    font-size: 1.8rem;
 }
 
 .list-item__container > *:first-child {
@@ -219,6 +241,11 @@ a {
     margin: 3.2rem 0 1.6rem;
 }
 
+.priority-container{
+    display: flex;
+    align-items: center;
+}
+
 .empty-message {
     margin: 3.2rem 0;
 }
@@ -230,4 +257,13 @@ a {
 
 .hide-completed{
     padding: 0 10px;
+}
+
+.hide{
+    display: none;
+}
+
+svg{
+    margin-right: 5px;
+    stroke-width: 5px;
 }
