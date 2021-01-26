@@ -51,7 +51,6 @@ const generateTodoDOM = (todo, SVGList) => {
     const checkbox = document.createElement('input')
     const todoText = document.createElement('input')
     const removeButton = document.createElement('button')
-    const priorityContainer = document.createElement('div') 
     const priorityList = document.createElement('select')
     const highOption = document.createElement('option')
     const mediumOption = document.createElement('option')
@@ -86,11 +85,7 @@ const generateTodoDOM = (todo, SVGList) => {
     })
     
     //Setup priority dropdown
-    priorityContainer.classList.add('priority-container')
-    const newPrioritySVG = SVGList.prioritySVG.cloneNode(true)
-    newPrioritySVG.classList.add('priority-SVG2')
-    priorityContainer.appendChild(newPrioritySVG)
-    priorityList.setAttribute('name', 'priorityListValue')
+    priorityList.classList.add('priority-list2')
     highOption.textContent = 'high'
     highOption.value = '3'
     mediumOption.textContent = 'medium'
@@ -100,8 +95,7 @@ const generateTodoDOM = (todo, SVGList) => {
     priorityList.appendChild(highOption)
     priorityList.appendChild(mediumOption)
     priorityList.appendChild(lowOption)
-    priorityContainer.appendChild(priorityList)
-    todoEl.appendChild(priorityContainer)
+    todoEl.appendChild(priorityList)
     priorityList.value = todo.priority
     priorityList.addEventListener('change', e => {
         editTodo(todo.id, {

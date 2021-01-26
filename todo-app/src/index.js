@@ -5,10 +5,8 @@ import { renderTodos } from './views'
 
 //setup SVG pictures
 const removeSVG = document.querySelector('.remove-todo')
-const prioritySVG = document.querySelector('.priority-svg2')
 const SVGList = {
-    removeSVG,
-    prioritySVG
+    removeSVG
 }
 
 // Render initial todos

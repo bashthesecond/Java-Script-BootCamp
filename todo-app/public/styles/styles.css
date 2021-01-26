@@ -64,6 +64,12 @@ a {
     align-items: center;
 }
 
+.todo-logo-svg {
+    width: 4rem;
+    height: auto; 
+    fill: white
+}
+
 .header__subtitle {
     /* color: #777; */
     font-size: 1.4rem;
@@ -106,22 +112,31 @@ a {
 
 .checkbox {
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
 .hide-completed-container{
     display: inline-flex;
     align-items: center;
+    font-size: 1.4rem;
+    padding: 10px;
 }
 
 .hide-completed{
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .checkbox > input {
-    /* margin-right: .4rem; */
+    margin-right: 1rem;
+}
+
+.hide-completed-svg {
+    width: 1.6rem;
+    height: auto; 
+    fill:white;
 }
 
 .button {
@@ -139,6 +154,12 @@ a {
 
 .button:hover {
     background: #5F3A87;
+}
+
+.remove-completed-svg {
+    width: 1.6rem;
+    height: auto;
+    fill:white;
 }
 
 .button--secondary {
@@ -241,9 +262,21 @@ a {
     margin: 3.2rem 0 1.6rem;
 }
 
-.priority-container{
-    display: flex;
-    align-items: center;
+.priority-list2{
+    background-image: url(../svg/priority.svg);
+    background-repeat: no-repeat;
+    background-size: 19px auto;
+    background-position: left;
+    padding-left: 18px;
+    border: none;
+}
+
+#priority-list{
+    background-image: url(../svg/priority.svg);
+    background-repeat: no-repeat;
+    background-size: 30px auto;
+    background-position: left;
+    padding-left: 30px;
 }
 
 .empty-message {
@@ -253,10 +286,6 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.hide-completed{
-    padding: 0 10px;
 }
 
 .hide{
