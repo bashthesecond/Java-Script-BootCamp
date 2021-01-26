@@ -86,11 +86,11 @@ const generateTodoDOM = (todo, SVGList) => {
     
     //Setup priority dropdown
     priorityList.classList.add('priority-list2')
-    highOption.textContent = 'high'
+    highOption.textContent = 'High'
     highOption.value = '3'
-    mediumOption.textContent = 'medium'
+    mediumOption.textContent = 'Medium'
     mediumOption.value = '2'
-    lowOption.textContent = 'low'
+    lowOption.textContent = 'Low'
     lowOption.value = '1'
     priorityList.appendChild(highOption)
     priorityList.appendChild(mediumOption)
@@ -106,7 +106,6 @@ const generateTodoDOM = (todo, SVGList) => {
 
     //setup remove button
     const newRemoveSVG = SVGList.removeSVG.cloneNode(true)
-    newRemoveSVG.classList.add('remove-SVG')
     removeButton.appendChild(newRemoveSVG)
     removeButton.classList.add('button', 'button--text')
     todoEl.appendChild(removeButton)
