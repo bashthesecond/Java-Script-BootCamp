@@ -31,6 +31,7 @@ body {
     color: #fafafa;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.6rem;
+    max-width: 100%;
 }
 
 button {
@@ -64,10 +65,23 @@ a {
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .header__title {
+        font-size: 2.25rem;
+    }
+}
+
 .todo-logo-svg {
     width: 4rem;
     height: auto; 
     fill: white
+}
+
+@media screen and (max-width: 768px) {
+    .todo-logo-svg {
+        width: 3rem;
+        height: auto;
+    }
 }
 
 .header__subtitle {
@@ -76,12 +90,18 @@ a {
     font-weight: 300;
 }
 
+@media screen and (max-width: 768px) {
+    .header__subtitle {
+        font-size: 1.05rem;
+    }
+}
+
 /* Actions Bar */
 .actions {
     background-color: #353239;
     border-top: 1px solid #dedfe0;
     border-bottom: 1px solid #dedfe0;
-    padding: 1rem;
+    padding: 1rem 0;
     height: 58px;
 }
 
@@ -111,8 +131,11 @@ a {
     justify-content: space-between
 } */
 
-/* Form Inputs */
+.content {
+    margin-bottom: 100px;
+}
 
+/* Form Inputs */
 .input {
     border: none;
     font-size: 1.4rem;
@@ -120,6 +143,21 @@ a {
     height: 3rem;
     margin-right: 1.6rem;
     padding: .4rem .8rem; 
+}
+
+@media screen and (max-width: 768px) {
+    .input {
+        font-size: 1.05rem;
+        height: 2.25rem;
+        margin-right: 1.2rem;
+        padding: .3rem .6rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .search-input {
+        width: 30%
+    }
 }
 
 .checkbox {
@@ -134,6 +172,13 @@ a {
     padding: 10px;
 }
 
+@media screen and (max-width: 768px) {
+    .hide-completed-container {
+        font-size: 1.05rem;
+        padding: 7.5px;
+    }
+}
+
 .hide-completed{
     display: inline-flex;
     align-items: center;
@@ -145,10 +190,23 @@ a {
     margin-right: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+    .checkbox > input {
+        font-size: .75rem;
+    }
+}
+
 .hide-completed-svg {
     width: 1.6rem;
     height: auto; 
     fill:white;
+}
+
+@media screen and (max-width: 768px) {
+    .hide-completed-svg {
+        width: 1.2rem;
+        height: auto; 
+    }
 }
 
 .button {
@@ -164,6 +222,13 @@ a {
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .button {
+        font-size: 1.05rem;
+        padding: 0.6rem;
+    }
+}
+
 .button:hover {
     background: #5F3A87;
 }
@@ -172,6 +237,13 @@ a {
     width: 1.6rem;
     height: auto;
     fill:white;
+}
+
+@media screen and (max-width: 768px) {
+    .remove-completed-svg {
+        width: 1.2rem;
+        height: auto;
+    }
 }
 
 .button--secondary {
@@ -188,6 +260,12 @@ a {
     border: none;
     color: #aaa;
     padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .button--text {
+        padding: 5px;
+    }
 }
 
 .button--text:hover {
@@ -214,6 +292,13 @@ a {
     align-items: center
 }
 
+@media screen and (max-width: 768px) {
+    .list-item {
+        margin: 1.2rem 0;
+        padding: .75rem 1.2rem;
+    }
+}
+
 .list-item__container {
     display: flex;
     font-size: 1.8rem;
@@ -221,8 +306,21 @@ a {
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .list-item__container {
+        font-size: 1.35rem;
+        width: 50%;
+    }
+}
+
 .list-item__container > *:first-child {
     margin-right: .8rem;
+}
+
+@media screen and (max-width: 768px) {
+    .list-item__container > *:first-child {
+        margin-right: .6rem;
+    }
 }
 
 .list-item:hover {
@@ -233,11 +331,25 @@ a {
     margin: 3.2rem 0 1.6rem;
 }
 
+@media screen and (max-width: 768px) {
+    .list-title {
+        margin: 2.4rem 0 1.2rem;
+    }
+}
+
 .edit-todo{
     border: none;
     background-color: #353239;
     color: #fafafa;
     font-size: 1.8rem;
+    width: 95%;
+}
+
+@media screen and (max-width: 768px) {
+    .edit-todo {
+        font-size: 1.35rem;
+        width: 100%
+    }
 }
 
 .edit-todo:focus {
@@ -253,6 +365,21 @@ a {
     padding-left: 18px;
     border: none;
     height: 1.8rem;
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 768px) {
+    .priority-list2 {
+        padding-left: 13.5px;
+        height: 1.35rem;
+        font-size: 1.05rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .priority-list2 {
+        font-size: 0.85rem;
+    }
 }
 
 .remove-todo {
@@ -261,8 +388,24 @@ a {
     fill: #aaa;
 }
 
+@media screen and (max-width: 768px) {
+    .remove-todo {
+        width: 1.2rem;
+    }
+}
+
 .button--text:hover .remove-todo{
     fill: white;
+}
+
+.create-input {
+    flex: .75;
+}
+
+@media screen and (max-width: 375px) {
+    .create-input {
+        width: 40%
+    }
 }
 
 #priority-list{
@@ -273,13 +416,28 @@ a {
     padding-left: 30px;
 }
 
+@media screen and (max-width: 375px) {
+    #priority-list {
+        font-size: 0.9rem;
+        padding-left: 20px;
+    }
+}
+
+
 .empty-message {
     margin: 3.2rem 0;
 }
+
 .create-todo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .create-todo-button {
+        font-size: .9rem;
+    }
 }
 
 .create-todo-svg {
@@ -288,10 +446,43 @@ a {
     fill:white;
 }
 
+@media screen and (max-width: 768px) {
+    .create-todo-svg {
+        width: 1.2rem;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .create-todo-svg {
+        width: 0.85rem;
+        height: auto;
+    }
+}
+
 .hide{
     display: none;
 }
 
 svg{
     margin-right: 5px;
+}
+
+.footer {
+    color: #fafafa;
+    background-color: #3c4251;
+    padding: 20px;
+    
+}
+
+.footer__title {
+    text-align: center;
+    font-size: 1.2rem;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .footer__title {
+        font-size: 1.05rem;
+    }
 }
