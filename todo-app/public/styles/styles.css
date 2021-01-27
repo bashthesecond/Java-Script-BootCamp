@@ -82,7 +82,19 @@ a {
     border-top: 1px solid #dedfe0;
     border-bottom: 1px solid #dedfe0;
     padding: 1rem;
+    height: 58px;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .container {
+    padding-top: 58px;
+}
+
 
 .actions__container {
     align-items: center;

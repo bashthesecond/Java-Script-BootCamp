@@ -129,5 +129,13 @@ const generateSummaryDOM = (incompleteTodos) => {
     return summary
 }
 
+const activateFixedActionBar = (windowYOffset, navbar, navbarYOffset) => {
+    if (windowYOffset >= navbarYOffset) {
+        navbar.classList.add('sticky')
+    } else {
+        navbar.classList.remove('sticky')
+    }
+}
+
 // Make sure to set up the exports
-export { renderTodos, generateTodoDOM, generateSummaryDOM }
+export { renderTodos, generateTodoDOM, generateSummaryDOM, activateFixedActionBar }

@@ -1,7 +1,7 @@
 // Add necessary imports
 import { setFilters } from './filters'
 import { createTodo, loadTodos, removeCompletedTodos} from './todos'
-import { renderTodos } from './views'
+import { renderTodos, activateFixedActionBar } from './views'
 
 //setup SVG pictures
 const removeSVG = document.querySelector('.remove-todo')
@@ -56,6 +56,12 @@ document.querySelector('#remove-completed-todos').addEventListener('click', e =>
     renderTodos(SVGList)
 })
 
+const navbar = document.querySelector('.actions')
+const navbarYOffset = navbar.offsetTop
+
+window.onscroll = () => {
+    activateFixedActionBar(window.pageYOffset, navbar, navbarYOffset)
+}
 
 
 
