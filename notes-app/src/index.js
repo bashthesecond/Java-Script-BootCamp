@@ -10,7 +10,7 @@ renderNotes()
 //Setup new note 
 document.querySelector('#create-note').addEventListener('click', (e) => {
     const id = createNote()
-    location.assign(`/edit.html#${noteID}`)
+    location.assign(`/edit.html#${id}`)
 })
 
 //Setup search bar
