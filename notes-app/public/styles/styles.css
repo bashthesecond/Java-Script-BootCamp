@@ -27,9 +27,15 @@ a {
 /* Container */
 
 .container {
-  max-width: 60rem;
+  max-width: 70%;
   margin: 0 auto;
   padding: 0 1.6rem;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
 }
 
 /* Header */
@@ -48,9 +54,21 @@ a {
   margin-bottom: 5px;
 }
 
+@media screen and (max-width: 768px) {
+    .header__title {
+        font-size: 2.4rem;
+    }
+}
+
 .header__subtitle {
   font-size: 1.6rem;
   font-weight: 300;
+}
+
+@media screen and (max-width: 768px) {
+    .header__subtitle {
+        font-size: 1.2rem;
+    }
 }
 
 .note-svg {
@@ -59,21 +77,35 @@ a {
     margin-right: 5px;
 }
 
+@media screen and (max-width: 768px) {
+    .note-svg {
+        width: 3.75rem;
+        height: auto;
+    }
+}
+
 /* Actions Bar */
 
 .actions {
     background-color: #F7F7F7;
     border-bottom: 1px solid #dedfe0;
-    padding: .8rem
+    padding: .8rem 0;
 }
 
 .actions__container {
     align-items: center;
     display: flex;
-    max-width: 60rem;
+    justify-content: space-between;
+    max-width: 70%;
     margin: 0 auto;
     min-height: 3rem;
     padding: 0 1.6rem;
+}
+
+@media screen and (max-width: 768px) {
+    .actions__container {
+        max-width: 90%;
+    }
 }
 
 .actions__container--spaced {
@@ -87,6 +119,13 @@ a {
     transition: fill 0.3s ease-in-out;
 }
 
+@media screen and (max-width: 768px) {
+    .home-svg {
+        width: 2.25rem;
+        height: auto;
+    }
+}
+
 .home-link:hover .home-svg {
     fill: #396684;
 }
@@ -94,6 +133,12 @@ a {
 .last-edited {
     font-size: 1.4rem;
     font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+    .last-edited {
+        font-size: 1.05rem;
+    }
 }
 
 /* Form Inputs */
@@ -108,8 +153,14 @@ a {
     padding: .4rem .8rem;
 }
 
+@media screen and (max-width: 768px) {
+    .input {
+        font-size: 1.05rem;
+    }
+}
+
 .search-input {
-    width: 50%
+    max-width: 40%
 }
     
 
@@ -121,6 +172,13 @@ a {
     font-weight: 300;
     height: 3rem;
     margin-right: .8rem;
+    max-width: 55%;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown {
+        font-size: 1.05rem;
+    }
 }
 
 .button {
@@ -132,6 +190,12 @@ a {
     transition: background .3s ease;
 }
 
+@media screen and (max-width: 768px) {
+    .button {
+        font-size: 1.05rem;
+    }
+}
+
 .button:hover {
     background: #396684;
 }
@@ -139,6 +203,13 @@ a {
 .create-note-svg {
     width: 2.6rem;
     height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .create-note-svg {
+        width: 1.95rem;
+        height: auto;
+    }
 }
 
 .button--secondary {
@@ -162,6 +233,12 @@ a {
     width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+    .title-input {
+        font-weight: 1.5rem;
+    }
+}
+
 .body-input {
     border: 1px solid #DEDFE0;
     font-family: inherit;
@@ -172,6 +249,12 @@ a {
     min-height: 15rem;
     padding: .8rem;
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .body-input {
+        font-weight: 1.2rem;
+    }
 }
 
 /* Note List Item */
@@ -187,6 +270,12 @@ a {
     transition: background .3s ease;
 }
 
+@media screen and (max-width: 768px) {
+    .list-item {
+        font-size: 1.2rem;
+    }
+}
+
 .list-item:hover {
     background: #eeeeee;
 }
@@ -196,11 +285,23 @@ a {
     margin-bottom: .4rem
 }
 
+@media screen and (max-width: 768px) {
+    .list-item__title {
+        font-size: 1.35rem;
+    }
+}
+
 .list-item__subtitle {
     color: #666;
     font-size: 1.4rem;
     font-weight: 300;
     font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+    .list-item__subtitle {
+        font-size: 1.05rem;
+    }
 }
 
 .empty-message {
@@ -211,5 +312,20 @@ a {
 .delete-note-svg {
     width: 2.6rem;
     height: auto;
+
+}
+
+@media screen and (max-width: 768px) {
+    .delete-note-svg {
+        width: 1.95rem;
+        height: auto;
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 
 }
