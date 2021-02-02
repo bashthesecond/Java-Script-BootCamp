@@ -331,12 +331,13 @@ a {
     text-align: center;
     font-size: 1rem;
     background-color: #F7F7F7;
+    border-top: 1px solid #dedfe0;
 
 }
 
 @media screen and (max-width: 768px) {
     .footer {
         font-size: 0.9rem;
-        
+        padding: 15px;
     }
 }
