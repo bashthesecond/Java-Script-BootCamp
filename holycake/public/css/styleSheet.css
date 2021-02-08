@@ -82,7 +82,7 @@ a:hover{
     transition: color 0.3s ease-in-out;
 }
 
-@media screen and (max-width:940px){
+/* @media screen and (max-width:940px){
     .headerHeadingContainer{
         margin-right: 0;
         float: none;
@@ -93,7 +93,7 @@ a:hover{
         font-size: 0.7em;
     }
     
-}
+} */
 
 .site-nav{
     display: flex;
@@ -137,7 +137,7 @@ a:hover{
     color: blue;
 }
 
-@media screen and (max-width:940px){
+/* @media screen and (max-width:940px){
     .site-nav{
         position: absolute;
         left: 12.5%;
@@ -172,7 +172,7 @@ a:hover{
         display: block;
     }
 
-}
+} */
 
 
 .cart-SVG-link{
@@ -190,7 +190,7 @@ a:hover{
 }
 
 .notification-count{
-    padding: 0px 5px;
+    padding: 0px 3.5px;
     font-size: 0.8em;
     font-weight: bold;
     background-color: #68CACB;
@@ -226,17 +226,10 @@ a:hover{
 
 .account-button{
     margin-left: auto;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     display: flex;
     align-content: center;
 }
-
-/* .account-button:hover .notification-count{
-    font-size: 5em;
-    color: blue;
-    fill: blue;
-} */
-
 
 .user-SVG{
     fill: #FFFFFF;

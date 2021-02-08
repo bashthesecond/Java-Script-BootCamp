@@ -1,5 +1,6 @@
-function reArrrangeEl = (el) => {
-	const firstChild = el.childNodes[1]
-	const secondChild = el.childNodes[0]
-	return [firstChild, secondChild]
-}
+const editNode = (el) => {
+	return [el.childNodes[3], el.childNodes[1]]
+} 
+
+
+export { editNode }
