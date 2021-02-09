@@ -1,16 +1,9 @@
-import { editNode } from './functions'
+import panImage from './functions.js'
 
-const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+const toggleControl = document.querySelector('.nav-toggle')
+const mobileNav = document.querySelector('.mobile-nav')
 
-if (width < 941) {
-    let parentEl = document.querySelector('.headerHeadingContainer')
-    console.log(parentEl)
-    const siteHeaderLink = document.querySelector('.siteHeaderLink')
-    console.log(siteHeaderLink)
-    const siteNav = document.querySelector('.site-nav')
-    console.log(siteNav)
-    parentEl.innerHTML = ""
-    parentEl.appendChild(siteNav)
-    parentEl.appendChild(siteHeaderLink)
+toggleControl.addEventListener('click', (e) => {
+    mobileNav.classList.toggle('active')
+})
 
-}

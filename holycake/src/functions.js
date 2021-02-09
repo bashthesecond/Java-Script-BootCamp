@@ -1,6 +1,7 @@
-const editNode = (el) => {
-	return [el.childNodes[3], el.childNodes[1]]
-} 
+const panImage = function (e) {
+    this.style.backgroundPositionX = -e.offsetX + "px"
+    this.style.backgroundPositionY = -e.offsetY + "px"
+    console.log(event)
+}
 
-
-export { editNode }
+export { panImage as default }
