@@ -34,7 +34,7 @@ a{
 }
 
 a:hover{
-    color: rgba(13, 0, 255, 1);
+    color:black;
 }
 
 .container-main{
@@ -135,13 +135,13 @@ a:hover{
 .site-nav a:focus,
 .site-nav a:hover{
     background-color: rgba(256, 256, 256, 1);
-    color: blue;
+    color: black;
 }
 
 .mobile-nav-container {
     width: 100%;
-    height: 140px;
-    /* margin-bottom: 0; */
+    height: 120px;
+    
 }
 
 .mobile-nav {
@@ -150,24 +150,28 @@ a:hover{
 }
 
 .mobile-nav-list {
+    width: 100%;
     padding: 0px;
     display: flex;
     flex-direction: column;
     text-align: center;
     border: 2px solid white;
+    /* justify-content: center; */
 }
 
 
 .mobile-nav-list li {
-    border: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 1px;
 }
 
 .mobile-nav-list li a {
-    font-size: 1.2rem;
+    font-size: 0.5rem;
+    padding: 5px;
 }
 
 .mobile-nav.active {
-    display: block;
+    display: flex;
 }
 
 @media screen and (max-width:940px){
@@ -263,7 +267,7 @@ a:hover{
     width: 2rem;
     height: auto;
     fill: #FFFFFF;
-    
+    transition: 0.3s ease-in-out;
 }
 
 .notification-count{
@@ -276,10 +280,11 @@ a:hover{
     position: absolute;
     right: -5%;
     top: -10%;
+    transition: 0.3s ease-in-out;
 }
 
 .cart-SVG-link:hover .cart-SVG {
-    fill: blue;
+    fill: black;
 }
 
 
@@ -298,7 +303,8 @@ a:hover{
 
 .btn:hover{
     background-color: rgba(223, 118, 148, 0.5);
-    color: #fff;
+    color: black;
+    font-weight: 500;
 }
 
 .account-button{
@@ -314,8 +320,13 @@ a:hover{
     stroke: #FFFFFF;
     width: 1rem;
     height: auto;
-    stroke-width: 2rem;
+    stroke-width: 1rem;
     margin-right: .3rem;
+}
+
+.account-button:hover .user-SVG {
+    fill: black !important;
+    stroke: black;
 }
 
 @media screen and (max-width: 940px){
@@ -332,7 +343,7 @@ a:hover{
     /* margin-top: 130px; */
 }
 
-.sec1{
+.sec1 {
     margin: 50px 10% 100px 10%; 
     
 }
@@ -345,16 +356,17 @@ a:hover{
 }
 
 .sec1-div1{
-    margin: 10px 20%;
+    margin: 20px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     font-size: 0.8em;
 }
 
-.btn2-container{
-    margin: 0;
-    text-align: center;
+.btn2 {
+    padding: 10px;
+    font-size: 1rem;
+    margin-right: 50px;
 }
 
 .sec1-div1-p1{
@@ -365,39 +377,80 @@ a:hover{
 .arrow-SVG {
     fill:  #FFFFFF;
     transform: translateY(1px);
+    width: 1.4rem;
+    height: auto;
+    transition: 0.2s ease-in-out;
 }
 
-.sec1-div1-p1-link:hover .sec1Div1P1{
+.sec1-div1-p1-link{
+    display: inline-flex;
+    align-items: center;
     color: #FFFFFF;
-    transform: scale(1.05);
-} 
+    }
+
+.sec1-p2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    margin-right: 5px;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+.sec1-div1-p1-link:hover .arrow-SVG {
+    fill: black;
+    stroke-width: 2px;
+    
+}
+
+.sec1-div1-p1-link:hover .sec1-p2 {
+    color: black;
+}
 
 @media screen and (max-width:940px){
-    .sec1{
-        margin: 50px 0;
+    .sec1 {
+        margin: 0 0 50px 0;
         
     }
     .sec1-p1{
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     .btn2{
-        
+        font-size: 0.8rem;
         text-align: center;
-        margin: 0 auto;
+        margin-right: 0;
+        margin-bottom: 10px;
     }
     
 
     .sec1-div1{
-        font-size: 0.6em;
-        margin: 15px auto;
-        display: block;
-        
+        flex-direction: column;
+        align-items: center;
     }
 
     .sec1-p2{
-        width: fit-content;
-        margin: 0 auto;
+       font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:425px){
+    .sec1-p1{
+        font-size: 1.5rem;
+    }
+
+    .btn2{
+        font-size: 0.7rem;
+    }
+    
+
+    .arrow-SVG {
+        width: 1rem;
+        height: auto;
+    }
+
+    .sec1-p2{
+        font-size: 0.8rem;
     }
     
     
@@ -415,9 +468,9 @@ a:hover{
     transition: all 0.3s ease-in-out;
 }
 
-.img-grid:hover .image-container:hover{
+.image-container:hover{
     cursor: pointer;
-    background-position: right bottom;
+    background-position: top right;
     
 }
 
