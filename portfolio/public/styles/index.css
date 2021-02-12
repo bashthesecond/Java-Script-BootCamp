@@ -1,17 +1,15 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: black;
-    display: flex;
-    /* min-height: 100vh; */
-    justify-content: center;
-    align-items: center;
-    
-
+.switch {
+    height: 50px;
+    width: 55px;
+    background: url(../images/switch.svg);
+    background-position: left bottom;
+    border: 2px solid brown;
 }
 
 .screen {
@@ -29,6 +27,10 @@ body {
     background-color: #fafafa;
     opacity: 0.7;
     transition: 0.1s;
-    transform: translate(-50%, -50%)
-}
+    transform: translate(-50%, -50%);
+    padding: 10px;
+} */
 
+* {
+    font-size: 70%;
+}
