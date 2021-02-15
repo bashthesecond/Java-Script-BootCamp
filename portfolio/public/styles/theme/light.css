@@ -1,4 +1,36 @@
 
 body {
-    background-color: yellow;
-   }
+    background-color: #1E1E1E;
+    
+}
+
+::-webkit-scrollbar {
+    width: 1.8rem;
+}
+ 
+::-webkit-scrollbar-track {
+    background: white;
+    -webkit-box-shadow: inset 0px 0px 6px rgba(169, 169, 169, 0.5);
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-button {
+    height: 2rem;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url(../SVG/up-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url(../SVG/down-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
