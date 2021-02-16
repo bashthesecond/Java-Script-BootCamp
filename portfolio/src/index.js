@@ -22,20 +22,18 @@ const switcher = document.querySelector('#switcher-script')
 const themeSwitch = document.querySelector('.switch--container')
 let style = localStorage.getItem('style')
 
-document.addEventListener("DOMContentLoaded", (e) => {
-    !style ? setTheme(switcher, 'light') : setTheme(switcher, style)
+onload = document.addEventListener("DOMContentLoaded", (e) => {
+    !style ? setTheme(switcher, themeSwitch, 'light') : setTheme(switcher, themeSwitch, style)
 })
 
 themeSwitch.addEventListener('click', (e) => {
     style = localStorage.getItem('style')
     if (style === 'light') {
-        console.log('clicked')
-        setTheme(switcher, 'dark')
-        themeSwitch.style.background = 'url(../SVG/on.svg)'
+        console.log(style)
+        setTheme(switcher, themeSwitch, 'dark')
     } else if (style === 'dark') {
-        console.log('clicked')
-        setTheme(switcher, 'light')
-        themeSwitch.style.background = '(../SVG/off.svg)'
+        console.log(style)
+        setTheme(switcher, themeSwitch, 'light')
     }
 })
 

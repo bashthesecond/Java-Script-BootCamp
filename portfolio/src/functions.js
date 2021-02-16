@@ -8,8 +8,9 @@ const mouseAnime = (e, panElement) => {
     panElement.style.top = e.pageY + 'px'
 }
 
-const setTheme = (script, theme) => {
+const setTheme = (script, themeSwitch, theme) => {
     script.href = `./styles/theme/${theme}.css`
+    themeSwitch.style.background = `url(../SVG/${theme}.svg)`
     localStorage.setItem('style', theme)
 }
 
