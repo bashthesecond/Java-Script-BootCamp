@@ -43,7 +43,7 @@ const greetUser = (int) => {
     if (23 <= int && int < 24 || 0 <= int < 1) {
         return 'Hello late bird '
     }
-    if (1 <= int < 5) {
+    if (1 <= int && int < 5) {
         return 'Hello early bird '
     }
 
