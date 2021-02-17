@@ -5,8 +5,8 @@ body {
 } */
 
 .content {
-    width: calc(100% * 8 / 12 );
-    margin: 0 calc(100% * 1.5 / 12 ) 0 calc(100% * 2.5 / 12 );
+    width: calc(100% * 8.25 / 12 );
+    margin: 0 calc(100% * 1.5 / 12 ) 0 calc(100% * 2 / 12 );
     border-right: 2px solid white;
     border-left: 2px solid white;
     background: rgba(3, 3, 22, 0.9);

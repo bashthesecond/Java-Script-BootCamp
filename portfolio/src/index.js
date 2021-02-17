@@ -1,4 +1,4 @@
-import { panImage, mouseAnime, setTheme, dateTimeFetcher } from './functions'
+import { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser } from './functions'
 import jstz from 'jstz'
 
 // // const panElement = document.querySelector('.container')
@@ -8,19 +8,25 @@ import jstz from 'jstz'
 
 //Time Zone
 let currentTimeZone = sessionStorage.getItem('timezone')
+const dateTimeContainer = document.querySelector('.time--container')
+const greetContainer = document.querySelector('.greet--container') 
 
 if (!currentTimeZone) {
     currentTimeZone = jstz.determine().name()
     sessionStorage.setItem('timezone', currentTimeZone)
 }
 
-let currentTime 
-setInterval(function (currentTimeZone) {
-    // currentTime = dateTimeFetcher(currentTimeZone)
-    console.log(currentTimeZone)
-}, 3000)
+let currentTime
+document.addEventListener('DOMContentLoaded', (event) => {
+    setInterval(function () {
+        currentTime = dateTimeFetcher(currentTimeZone)
+        greetContainer.textContent = greetUser(parseInt(currentTime.time.split(':')[0]))
+        dateTimeContainer.textContent = currentTime.time
+    }, 1)
+})
 
-// console.log(currentTime.time)
+
+
 
 // Theme Switcher
 const switcher = document.querySelector('#switcher-script')
