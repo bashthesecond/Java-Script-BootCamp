@@ -36,17 +36,4 @@ const greetUser = (int) => {
     }
     if (12 <= int && int < 18) {
         return 'Good afternoon, '
-    }
-     if (18 <= int && int < 23) {
-        return 'Good evening, '
-    } 
-    if (23 <= int && int < 24 || 0 <= int < 1) {
-        return 'Hello late bird '
-    }
-    if (1 <= int && int < 5) {
-        return 'Hello early bird '
-    }
-
-}
-
-export { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser }
+    }export { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser }
