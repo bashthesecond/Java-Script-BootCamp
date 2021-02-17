@@ -28,5 +28,25 @@ const dateTimeFetcher = (currentTimeZone) => {
     }
 }
 
+const greetUser = (int) => {
+    // console.log(int)
+    if (5 <= int && int < 12) {
+        // console.log(int)
+        return 'Good morning, '
+    }
+    if (12 <= int && int < 18) {
+        return 'Good afternoon, '
+    }
+     if (18 <= int && int < 23) {
+        return 'Good evening, '
+    } 
+    if (23 <= int && int < 24 || 0 <= int < 1) {
+        return 'Hello late bird '
+    }
+    if (1 <= int < 5) {
+        return 'Hello early bird '
+    }
 
-export { panImage, mouseAnime, setTheme, dateTimeFetcher }
+}
+
+export { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser }
