@@ -15,7 +15,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 1.8rem;
-    border: 1px solid white;
+    border: 1px solid black;
 }
  
 ::-webkit-scrollbar-track {
@@ -34,13 +34,13 @@ body {
 }
 
 ::-webkit-scrollbar-button:vertical:decrement {
-    background-image: url(../SVG/up-arrow.svg);
+    background-image: url(../../SVG/up-arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
 ::-webkit-scrollbar-button:vertical:increment {
-    background-image: url(../SVG/down-arrow.svg);
+    background-image: url(../../SVG/down-arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -30,10 +30,14 @@ const dateTimeFetcher = (currentTimeZone) => {
 
 const greetUser = (int) => {
     // console.log(int)
-    if (5 <= int && int < 12) {
-        // console.log(int)
+    if (int >= 0 && int < 12) {
         return 'Good morning, '
-    }
-    if (12 <= int && int < 18) {
+    } else if (int >= 12 && int < 18) {
         return 'Good afternoon, '
-    }export { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser }
+    } else {
+        return 'Good evening, '
+    }
+
+    }
+
+export { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser }
