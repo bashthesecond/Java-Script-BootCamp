@@ -5,19 +5,18 @@ body {
 } */
 
 .content {
-    width: calc(100% * 8.25 / 12 );
-    margin: 0 calc(100% * 1.5 / 12 ) 0 calc(100% * 2 / 12 );
-    border-right: 2px solid #1e1e1e;
-    border-left: 2px solid #1e1e1e;
-    background: #E3E3FF;
+    width: calc(100% * 11 / 12 );
+    margin: 0 0 0 calc(100% * 1 / 12 );
+    /* border-right: 2px solid #1e1e1e;
+    border-left: 2px solid #1e1e1e; */
+    background: #fff;
     height: 100%;
     color: black;
 }
 
-
 ::-webkit-scrollbar {
     width: 1.8rem;
-    border: 1px solid white;
+    background: white;
 }
  
 ::-webkit-scrollbar-track {

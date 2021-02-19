@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setInterval(function () {
         currentTime = dateTimeFetcher(currentTimeZone)
         greetContainer.textContent = greetUser(parseInt(currentTime.time.split(':')[0]))
-        dateTimeContainer.textContent = currentTime.time
+        // dateTimeContainer.textContent = currentTime.time
     }, 1)
 })
 
@@ -50,3 +50,35 @@ themeSwitch.addEventListener('click', (e) => {
 })
 
 
+//About Animation
+const onTick = (spanEl, char) => {
+    const span = spanEl.querySelectorAll('span')[char]
+    span.classList.add('fade')
+    // return char++
+}
+
+const animateSpan = (span, container) => {
+    const spanEl = document.querySelector(`${container}`)
+    const animeEl = span. split('')
+    for (let i = 0; i <  animeEl.length; i++) {
+        spanEl.innerHTML += `<span>${animeEl[i]}</span>`
+    }
+    let char = 0
+    let timer = setInterval(() => {
+        onTick(spanEl, char)
+        char++
+        if (char === animeEl.length) {
+            clearInterval(timer)
+            return
+        }    
+    }, 50)
+    
+}
+
+
+animateSpan('I am a Mobile Engineer from south western Nigeria.', '.about__subtitle--1')
+animateSpan('I create portable and highly efficient mobile applications.', '.about__subtitle--2')
+animateSpan('I am a Mobile Engineer from south western Nigeria.', '.about__subtitle--1')
+
+// 
+// 'I maximize flexibility to inspire an interesting surfing experience.'

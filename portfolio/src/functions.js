@@ -14,6 +14,7 @@ const mouseAnime = (e, panElement) => {
 const setTheme = (script, themeSwitch, contentArea, theme) => {
     script.href = `./styles/theme/${theme}.css`
     themeSwitch.style.background = `url(../SVG/${theme}.svg)`
+    themeSwitch.style.backgroundRepeat ='no-repeat' 
     contentArea.style.background = `url(../SVG/bulb-${theme}.svg)`
     contentArea.style.backgroundRepeat = 'no-repeat'
     contentArea.style.backgroundPosition = 'top center'
