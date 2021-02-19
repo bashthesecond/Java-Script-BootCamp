@@ -70,10 +70,28 @@ const animateSpan = (span, container) => {
     
 }
 
+const calcInterval = (val) => {
+    return val * 50
+}
 
-animateSpan('I am a Mobile Engineer from south western Nigeria.', '.about__subtitle--1')
-animateSpan('I create portable and highly efficient mobile applications.', '.about__subtitle--2')
-animateSpan('I am a Mobile Engineer from south western Nigeria.', '.about__subtitle--1')
+
+const a = 'I am a Mobile Engineer from south western Nigeria.'
+const b = 'I create portable and highly efficient mobile applications.'
+const c = 'I maximize flexibility to inspire an interesting surfing experience.'
+let interval = 0
+
+animateSpan(a, '.about__subtitle--1')
+interval += a.split('').length
+setTimeout(()=> {
+    animateSpan(b, '.about__subtitle--2')
+}, calcInterval(interval))
+interval += b.split('').length
+setTimeout(()=> {
+    animateSpan(c, '.about__subtitle--3')
+}, calcInterval(interval))
+
+// animateSpan('I create portable and highly efficient mobile applications.', '.about__subtitle--2')
+// animateSpan('I am a Mobile Engineer from south western Nigeria.', '.about__subtitle--3')
 
 // 
-// 'I maximize flexibility to inspire an interesting surfing experience.'
+// 

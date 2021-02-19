@@ -221,9 +221,9 @@ body {
 
 .about__title {
     font-weight: 800;
-    margin-right: calc(82.5vw / 8);
+    /* margin-right: calc(82.5vw / 8); */
     font-size: 2.5rem;
-    text-align: right;
+    text-align: center;
     
 }
 
@@ -235,9 +235,9 @@ body {
     font-style: italic;
     margin: 20px 0;
     font-weight: 500;
-    margin-right: calc(82.5vw / 8);
+    /* margin-right: calc(82.5vw / 8); */
     font-size: 2.5rem;
-    text-align: right;    
+    text-align: center;    
     
 }
 
@@ -264,3 +264,6 @@ body {
     opacity: 1;
 }
 
+.about__subtitle--3 .fade {
+    opacity: 1;
+}
