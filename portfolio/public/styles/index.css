@@ -96,19 +96,12 @@ body {
     width: calc(100% * 1 / 12 );    
 }
 
-.nav--1 .container {
+.nav .container {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-} 
-
-.logo__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100% / 10);
 }
 
 .logo--svg {
@@ -128,9 +121,17 @@ body {
     stroke: black;
 }
 
-.navigation {
-    height: calc(100% * 7 / 10);
+.switch--container {
+    width: 60px;
+    height: 30px;
+    background-repeat: no-repeat;
+    margin-bottom: calc(100vh / 5)
 }
+
+.switch--container:hover {
+    cursor: pointer;
+}
+
 
 .navigation ul {
     margin: 0;
@@ -138,7 +139,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     
 }
 
@@ -147,6 +148,7 @@ body {
     text-align: center;
     display: block;
     width: 100%;
+    overflow: hidden;
 
 }
 
@@ -183,7 +185,7 @@ body {
 .link__subtitle {
     font-size: 1.2rem;
     padding: 10px;
-    transform: translateY(100px);
+    transform: translateY(50px);
     font-weight: bold;
     letter-spacing: 0.1rem;
 }
@@ -201,52 +203,14 @@ body {
     100% {transform: translateY(0)}
 }
 
-.nav--1 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-}
-
-.switch--container {
-    width: 60px;
-    height: 30px;
-    background-repeat: no-repeat;
-    margin-bottom: calc(100vh / 5)
-}
-
-.switch--container:hover {
-    cursor: pointer;
-}
-
-.time--container {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.09rem;
-    color: white;
-    border-radius: 10px;
-    height: 50px;
-    background-color: black;
-    width: 100%;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-}
-
 .content {
-    width: calc(100% * 8.25 / 12 );
-    margin: 0 calc(100% * 1.5 / 12 ) 0 calc(100% * 2 / 12 );
-    /* border-right: 2px solid white;
-    border-left: 2px solid white;
-    background: #1e1e1e; */
+    width: calc(100% * 11 / 12 );
+    margin: 0 0 0 calc(100% * 1 / 12 );
     height: 100%;
     align-self: center;
     justify-self: center;
 }
-.content--area {
-    
-}
+
 
 .about--container {
     height: 100vh;
@@ -299,3 +263,4 @@ body {
 .about__subtitle--2 .fade {
     opacity: 1;
 }
+

@@ -1,16 +1,9 @@
-/* 
-body {
-    background-color: rgba(87, 87, 113, 0.6);
-    
-} */
+html {
+    color: white;
+}
 
 .content {
-    width: calc(100% * 11 / 12 );
-    margin: 0 0 0 calc(100% * 1 / 12 );
-    /* border-right: 2px solid white;
-    border-left: 2px solid white; */
-    background: rgba(3, 3, 22, 0.7);
-    height: 100%;
+    background: #070724;
 }
 
 .nav {
@@ -46,4 +39,35 @@ body {
     background-image: url(../../SVG/down-arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.logo__container {
+    height: 60px;
+    width: 100%;
+    background: url(../../SVG/dark-logo.svg);
+    background-repeat: no-repeat;
+
+}
+
+.about--svg {
+    fill: white;
+    stroke-width: 2px;
+    stroke: white;
+}
+
+.portfolio--svg {
+    fill: white;
+    stroke: white;
+    stroke-width: 3px;
+}
+
+.contact--svg {
+    fill: white;
+    stroke-width: 2px;
+    stroke: white;
+}
+
+.navigation ul li a {
+    color: white;
+    
 }

@@ -11,13 +11,10 @@ const mouseAnime = (e, panElement) => {
     panElement.style.top = e.pageY + 'px'
 }
 
-const setTheme = (script, themeSwitch, contentArea, theme) => {
+const setTheme = (script, themeSwitch, theme) => {
     script.href = `./styles/theme/${theme}.css`
     themeSwitch.style.background = `url(../SVG/${theme}.svg)`
     themeSwitch.style.backgroundRepeat ='no-repeat' 
-    contentArea.style.background = `url(../SVG/bulb-${theme}.svg)`
-    contentArea.style.backgroundRepeat = 'no-repeat'
-    contentArea.style.backgroundPosition = 'top center'
     localStorage.setItem('style', theme)
 }
 

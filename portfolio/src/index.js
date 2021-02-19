@@ -21,31 +21,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setInterval(function () {
         currentTime = dateTimeFetcher(currentTimeZone)
         greetContainer.textContent = greetUser(parseInt(currentTime.time.split(':')[0]))
-        // dateTimeContainer.textContent = currentTime.time
     }, 1)
 })
-
-
-
 
 // Theme Switcher
 const switcher = document.querySelector('#switcher-script')
 const themeSwitch = document.querySelector('.switch--container')
-const contentArea = document.querySelector('.content--area')
 let style = localStorage.getItem('style')
 
 onload = document.addEventListener("DOMContentLoaded", (e) => {
-    !style ? setTheme(switcher, themeSwitch, contentArea, 'light') : setTheme(switcher, themeSwitch, contentArea, style)
+    !style ? setTheme(switcher, themeSwitch, 'light') : setTheme(switcher, themeSwitch, style)
 })
 
 themeSwitch.addEventListener('click', (e) => {
     style = localStorage.getItem('style')
     if (style === 'light') {
         console.log(style)
-        setTheme(switcher, themeSwitch, contentArea, 'dark')
+        setTheme(switcher, themeSwitch, 'dark')
     } else if (style === 'dark') {
         console.log(style)
-        setTheme(switcher, themeSwitch, contentArea, 'light')
+        setTheme(switcher, themeSwitch, 'light')
     }
 })
 
