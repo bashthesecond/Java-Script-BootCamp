@@ -220,29 +220,30 @@ body {
 }
 
 .about__content {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 50%;
     flex: 1 50%;
-    overflow-anchor: none
+    overflow-anchor: none;
+    border-radius: 20px;
+    padding: 20px;
+    
     
 }
 
 .about__bg {
-    /* width: 50%;  */
     flex: 1 50%;
-    height: 100%;
     display: flex;
     align-items: center;
 }
 
 .about__title {
     font-weight: 800;
-    /* margin-right: calc(82.5vw / 8); */
     font-size: 2.5rem;
     text-align: left;
+    margin-bottom: 15px;
+    margin-top: 0px;
     
 }
 
@@ -259,32 +260,18 @@ body {
     padding: 0;
 }
 
-.about__subtitle--1 span{
+p span{
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 1s ease;
 }
 
-.about__subtitle--2 span{
-    opacity: 0;
-    transition: all 0.5s ease;
-}
 
-.about__subtitle--3 span{
-    opacity: 0;
-    transition: all 0.5s ease;
-}
 
-.about__subtitle--1 .fade {
+span.fade {
     opacity: 1;
 }
 
-.about__subtitle--2 .fade {
-    opacity: 1;
-}
 
-.about__subtitle--3 .fade {
-    opacity: 1;
-}
 
 .bg {
     width: 100%;
