@@ -39,7 +39,7 @@
 html {
     width: 100%;
     color: white;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 body {
@@ -50,10 +50,21 @@ body {
     height: 100%;
 }
 
+img {
+    max-width: 100%;
+}
+
 .container {
     padding: 25px;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.test {
+    color: red;
 }
 
 /* ::-webkit-scrollbar {
@@ -92,8 +103,8 @@ body {
     position: fixed;
     top: 0;
     height: 100%;
-    background: #F7F7F7;
-    width: calc(100% * 1 / 12 );    
+    background: #f7f7f7;
+    width: calc(100% * 1 / 12);
 }
 
 .nav .container {
@@ -126,16 +137,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
 
-.navigation ul  li {
+.navigation ul li {
     list-style: none;
     text-align: center;
     display: block;
     width: 100%;
     overflow: hidden;
-
 }
 
 .navigation ul li a {
@@ -150,7 +159,7 @@ body {
 }
 
 .navigation ul li a:hover {
-    background: #23cba7; 
+    background: #23cba7;
 }
 
 .about--svg {
@@ -176,22 +185,36 @@ body {
     letter-spacing: 0.1rem;
 }
 
-.navigation ul li a:hover .link__subtitle  {
+.navigation ul li a:hover .link__subtitle {
     animation: bounce 0.8s;
     animation-fill-mode: forwards;
 }
 
 @keyframes bounce {
-    20% {transform: translateY(20px)}
-    40% {transform: translateY(-10px)}
-    60% {transform: translateY(10px)}
-    80% {transform: translateY(-5px)}
-    100% {transform: translateY(0)}
+    20% {
+        transform: translateY(20px);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(10px);
+    }
+
+    80% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .content {
-    width: calc(100% * 11 / 12 );
-    margin: 0 0 0 calc(100% * 1 / 12 );
+    width: calc(100% * 11 / 12);
+    margin: 0 0 0 calc(100% * 1 / 12);
     height: 100%;
     align-self: center;
     justify-self: center;
@@ -212,9 +235,6 @@ body {
     flex: 1 50%;
     overflow-anchor: none;
     border-radius: 20px;
-    padding: 20px;
-    
-    
 }
 
 .about__bg {
@@ -229,37 +249,77 @@ body {
     text-align: left;
     margin-bottom: 15px;
     margin-top: 0px;
-    
 }
 
 .greet--container {
     font-size: 2.5rem;
 }
 
-.about__subtitle--1, .about__subtitle--2, .about__subtitle--3 {
+.about__subtitle--1,
+.about__subtitle--2,
+.about__subtitle--3 {
     font-style: italic;
     font-weight: 500;
     font-size: 2.5rem;
-    text-align: left;    
+    text-align: left;
     margin: 0;
     padding: 0;
 }
 
-p span{
+p span {
     opacity: 0;
     transition: all 1s ease;
 }
-
-
 
 span.fade {
     opacity: 1;
 }
 
-
-
 .bg {
     width: 100%;
     height: auto;
-    
+}
+
+.project {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+}
+
+.project__photo {
+    flex: 2;
+    overflow: hidden;
+    margin: 25px;
+    border: 10px solid #e8e8ff;
+    border-radius: 5px;
+}
+
+.project__info {
+    flex: 1;
+}
+
+.project__photo--1 {
+    background: url(../images/holycake.png);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.project__photo--2 {
+    background: url(../images/progress.png);
+    background-position: top center;
+}
+
+.project__photo--3 {
+    background: url(../images/hangman.png);
+    background-position: center center;
+}
+.project__photo--4 {
+    background: url(../images/notes.png);
+    background-position: top left;
+}
+
+.project__photo--5 {
+    background: url(../images/todo.png);
+    background-position: top center;
 }

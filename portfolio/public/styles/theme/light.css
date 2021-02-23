@@ -16,7 +16,7 @@ html {
 }
  
 ::-webkit-scrollbar-track {
-    background: white;
+    background: #e8e8ff;
     -webkit-box-shadow: inset 0px 0px 6px rgba(169, 169, 169, 0.5);
 }
  

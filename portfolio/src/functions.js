@@ -1,7 +1,7 @@
 import moment from 'moment'
 import tz from 'moment-timezone'
 
-const panImage = (e) => {
+const panImage = function (e) {
     this.style.backgroundPositionX = -e.offsetX + "px"
     this.style.backgroundPositionY = -e.offsetY + "px"
 }
@@ -15,6 +15,7 @@ const setTheme = (script, themeSwitch, theme) => {
     script.href = `./styles/theme/${theme}.css`
     themeSwitch.style.background = `url(../SVG/${theme}.svg)`
     themeSwitch.style.backgroundRepeat ='no-repeat' 
+    themeSwitch.style.backgroundPosition = 'center'
     localStorage.setItem('style', theme)
 }
 
@@ -36,6 +37,46 @@ const greetUser = (int) => {
         return 'Good evening, '
     }
 
-    }
+}
 
-export { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser }
+//About Animation
+const onTick = (spanEl, char) => {
+    const span = spanEl.querySelectorAll('span')[char]
+    span.classList.add('fade')
+    // return char++
+}
+
+const animateSpan = (span, container) => {
+    const spanEl = document.querySelector(`${container}`)
+    const animeEl = span. split('')
+    for (let i = 0; i <  animeEl.length; i++) {
+        spanEl.innerHTML += `<span>${animeEl[i]}</span>`
+    }
+    let char = 0
+    let timer = setInterval(() => {
+        onTick(spanEl, char)
+        char++
+        if (char === animeEl.length) {
+            clearInterval(timer)
+            return
+        }    
+    }, 50)
+    
+}
+
+const calcInterval = (val) => {
+    return val * 50
+}
+
+const animateAbout = (array) => {
+    let interval = 0
+    for (let i = 0; i < array.length; i++) {
+        setTimeout(()=> {
+            animateSpan(array[i].paragraph, array[i].el)
+        }, interval)
+        console.log(interval)
+        interval += calcInterval(array[i].paragraph.split('').length)
+    }
+}
+
+export { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser, onTick, animateSpan, calcInterval, animateAbout  }

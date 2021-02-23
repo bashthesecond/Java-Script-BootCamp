@@ -1,4 +1,4 @@
-import { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser } from './functions'
+import { panImage, mouseAnime, setTheme, dateTimeFetcher, greetUser, animateAbout } from './functions'
 import jstz from 'jstz'
 
 // // const panElement = document.querySelector('.container')
@@ -44,47 +44,6 @@ themeSwitch.addEventListener('click', (e) => {
     }
 })
 
-
-//About Animation
-const onTick = (spanEl, char) => {
-    const span = spanEl.querySelectorAll('span')[char]
-    span.classList.add('fade')
-    // return char++
-}
-
-const animateSpan = (span, container) => {
-    const spanEl = document.querySelector(`${container}`)
-    const animeEl = span. split('')
-    for (let i = 0; i <  animeEl.length; i++) {
-        spanEl.innerHTML += `<span>${animeEl[i]}</span>`
-    }
-    let char = 0
-    let timer = setInterval(() => {
-        onTick(spanEl, char)
-        char++
-        if (char === animeEl.length) {
-            clearInterval(timer)
-            return
-        }    
-    }, 50)
-    
-}
-
-const calcInterval = (val) => {
-    return val * 50
-}
-
-const animateAbout = (array) => {
-    let interval = 0
-    for (let i = 0; i < array.length; i++) {
-        setTimeout(()=> {
-            animateSpan(array[i].paragraph, array[i].el)
-        }, interval)
-        console.log(interval)
-        interval += calcInterval(array[i].paragraph.split('').length)
-    }
-}
-
 animateAbout([{
     paragraph: 'I am a Mobile Engineer from south western Nigeria.',
     el: '.about__subtitle--1'
@@ -98,19 +57,12 @@ animateAbout([{
     el: '.about__subtitle--3'
 }])
 
+const imageContainer = document.querySelector('.project__photo--1')
 
+imageContainer.addEventListener('mousemove', panImage)
 
-// const a = 'I am a Mobile Engineer from south western Nigeria.'
-// const b = 'I create portable and highly efficient mobile applications.'
-// const c = 'I maximize flexibility to inspire an interesting surfing experience.'
-// let interval = 0
+// for (let i = 0; i < imageContainer.length; i++) {
+//     console.log(imageContainer[i])
 
-// animateSpan(a, '.about__subtitle--1')
-// interval += a.split('').length
-// setTimeout(()=> {
-//     animateSpan(b, '.about__subtitle--2')
-// }, calcInterval(interval))
-// interval += b.split('').length
-// setTimeout(()=> {
-//     animateSpan(c, '.about__subtitle--3')
-// }, calcInterval(interval))
+//     imageContainer[i].addEventListener('onmousemove', panImage)
+// }
