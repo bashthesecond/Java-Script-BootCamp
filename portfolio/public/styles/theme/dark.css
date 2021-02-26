@@ -13,17 +13,16 @@ html {
 ::-webkit-scrollbar {
     width: 1.8rem;
 }
- 
+
 ::-webkit-scrollbar-track {
-    background: #050517;;
+    background: #050517;
     -webkit-box-shadow: inset 0px 0px 6px rgba(169, 169, 169, 0.5);
 }
- 
+
 ::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     border-radius: 10px;
 }
-
 
 ::-webkit-scrollbar-button {
     height: 2rem;
@@ -46,7 +45,6 @@ html {
     width: 100%;
     background: url(../../SVG/dark-logo.svg);
     background-repeat: no-repeat;
-
 }
 
 .about--svg {
@@ -69,6 +67,8 @@ html {
 
 .navigation ul li a {
     color: white;
-    
 }
 
+.project__photo {
+    border: 10px solid #e8e8ff;
+}

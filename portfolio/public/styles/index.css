@@ -30,8 +30,8 @@ img {
     margin: 0 auto;
 }
 
-.test {
-    color: red;
+::-webkit-scrollbar-track {
+    transition: background 0.5s ease-in-out;
 }
 
 .nav {
@@ -40,6 +40,7 @@ img {
     height: 100%;
     background: #f7f7f7;
     width: calc(100% * 1 / 12);
+    transition: all 0.5s ease-in-out;
 }
 
 .nav .container {
@@ -225,8 +226,11 @@ span.fade {
     flex: 2;
     overflow: hidden;
     margin: 25px;
-    border: 10px solid #e8e8ff;
     border-radius: 5px;
+    background-size: 120% !important;
+    background-repeat: no-repeat !important;
+    --x: 0px !important;
+    --y: 0px !important;
 }
 
 .project__info {
@@ -235,26 +239,23 @@ span.fade {
 
 .project__photo--1 {
     background: url(../images/holycake.png);
-    /* background-size: cover; */
-    background-repeat: no-repeat;
-    background-position: top center;
 }
 
 .project__photo--2 {
     background: url(../images/progress.png);
-    background-position: top center;
+    /* background-position: top center; */
 }
 
 .project__photo--3 {
     background: url(../images/hangman.png);
-    background-position: center center;
+    /* background-position: center center; */
 }
 .project__photo--4 {
     background: url(../images/notes.png);
-    background-position: top left;
+    /* background-position: top left; */
 }
 
 .project__photo--5 {
     background: url(../images/todo.png);
-    background-position: top center;
+    /* background-position: top center; */
 }

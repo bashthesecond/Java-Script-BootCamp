@@ -2,8 +2,10 @@ import moment from 'moment'
 import tz from 'moment-timezone'
 
 const panImage = function (e) {
-    this.style.backgroundPositionX = -e.offsetX + "px"
-    this.style.backgroundPositionY = -e.offsetY + "px"
+    const offsetY = -(e.offsetY / 15 )
+    console.log(-e.offsetX)
+    this.style.backgroundPositionX = -((e.offsetX / 10) + 2 ) + "px"
+    this.style.backgroundPositionY = (offsetY > 0 ? 0 : offsetY) + "px"
 }
 
 const mouseAnime = (e, panElement) => {

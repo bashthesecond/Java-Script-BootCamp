@@ -57,12 +57,12 @@ animateAbout([{
     el: '.about__subtitle--3'
 }])
 
-const imageContainer = document.querySelector('.project__photo--1')
+const imageContainer = document.querySelectorAll('.project__photo')
 
-imageContainer.addEventListener('mousemove', panImage)
+// imageContainer.addEventListener('mousemove', panImage)
 
-// for (let i = 0; i < imageContainer.length; i++) {
-//     console.log(imageContainer[i])
+for (let i of imageContainer) {
+    // console.log(imageContainer[i])
 
-//     imageContainer[i].addEventListener('onmousemove', panImage)
-// }
+    i.addEventListener('mousemove', panImage)
+}
